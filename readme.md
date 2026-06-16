@@ -106,10 +106,8 @@ idf.py flash monitor
 
 ## Demo
 
-Add a short video or GIF here showing the LED blink rate changing when the BOOT button is pressed.
-
 ```md
-[Watch the demo video](assets/led_blink_rate_demo.mp4)
+[Watch the demo video](assets/potentiometer_blink.mp4)
 ```
 
 ## License
