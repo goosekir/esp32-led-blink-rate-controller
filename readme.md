@@ -104,11 +104,10 @@ idf.py flash monitor
 * The button uses a simple edge-detection check with a short delay for basic debounce handling.
 * Some VS Code or clangd warnings may appear because ESP-IDF uses toolchain-specific compiler flags. The project should be verified using `idf.py build`.
 
+```md
 ## Demo
 
-```md
 [Watch the demo video](assets/potentiometer_blink.mp4)
-```
 
 ## License
 
