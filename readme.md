@@ -4,29 +4,29 @@ This project uses an ESP32 with ESP-IDF to control an LED blink rate using the B
 
 ## Features
 
-* Controls an LED connected to GPIO23
-* Uses the ESP32 BOOT button on GPIO0 as an input
-* Cycles through multiple LED blink frequencies
-* Reads potentiometer input using ADC1
-* Prints LED state, potentiometer value, and blink rate to the serial monitor
-* Uses FreeRTOS delays for timing
-* Built using ESP-IDF
+- Controls an LED connected to GPIO23
+- Uses the ESP32 BOOT button on GPIO0 as an input
+- Cycles through multiple LED blink frequencies
+- Reads potentiometer input using ADC1
+- Prints LED state, potentiometer value, and blink rate to the serial monitor
+- Uses FreeRTOS delays for timing
+- Built using ESP-IDF
 
 ## Hardware Used
 
-* ESP32 development board
-* LED
-* Resistor for LED
-* Potentiometer
-* Breadboard
-* Jumper wires
+- ESP32 development board
+- LED
+- Resistor for LED
+- Potentiometer
+- Breadboard
+- Jumper wires
 
 ## Pin Configuration
 
-| Component            | ESP32 Pin               |
-| -------------------- | ----------------------- |
-| LED output           | GPIO23                  |
-| BOOT button          | GPIO0                   |
+| Component | ESP32 Pin |
+|---|---|
+| LED output | GPIO23 |
+| BOOT button | GPIO0 |
 | Potentiometer signal | GPIO34 / ADC1 Channel 6 |
 
 ## Blink Rates
@@ -34,14 +34,14 @@ This project uses an ESP32 with ESP-IDF to control an LED blink rate using the B
 Each BOOT button press cycles to the next blink rate.
 
 | Speed Index | Blink Frequency | Half-Cycle Delay |
-| ----------- | --------------: | ---------------: |
-| 0           |         0.25 Hz |          2000 ms |
-| 1           |          0.5 Hz |          1000 ms |
-| 2           |            1 Hz |           500 ms |
-| 3           |            2 Hz |           250 ms |
-| 4           |            4 Hz |           125 ms |
-| 5           |            8 Hz |            62 ms |
-| 6           |           16 Hz |            31 ms |
+|---|---:|---:|
+| 0 | 0.25 Hz | 2000 ms |
+| 1 | 0.5 Hz | 1000 ms |
+| 2 | 1 Hz | 500 ms |
+| 3 | 2 Hz | 250 ms |
+| 4 | 4 Hz | 125 ms |
+| 5 | 8 Hz | 62 ms |
+| 6 | 16 Hz | 31 ms |
 
 After reaching 16 Hz, the next button press wraps the blink rate back to 0.25 Hz.
 
@@ -49,6 +49,8 @@ After reaching 16 Hz, the next button press wraps the blink rate back to 0.25 Hz
 
 ```text
 esp32-led-blink-rate-controller/
+├── assets/
+│   └── potentiometer_blink.mp4
 ├── main/
 │   ├── assignment_file.c
 │   └── CMakeLists.txt
@@ -98,13 +100,12 @@ idf.py flash monitor
 
 ## Notes
 
-* This project was developed using ESP-IDF.
-* GPIO0 is commonly connected to the ESP32 BOOT button.
-* GPIO34 is input-only, making it suitable for potentiometer ADC readings.
-* The button uses a simple edge-detection check with a short delay for basic debounce handling.
-* Some VS Code or clangd warnings may appear because ESP-IDF uses toolchain-specific compiler flags. The project should be verified using `idf.py build`.
+- This project was developed using ESP-IDF.
+- GPIO0 is commonly connected to the ESP32 BOOT button.
+- GPIO34 is input-only, making it suitable for potentiometer ADC readings.
+- The button uses a simple edge-detection check with a short delay for basic debounce handling.
+- Some VS Code or clangd warnings may appear because ESP-IDF uses toolchain-specific compiler flags. The project should be verified using `idf.py build`.
 
-```md
 ## Demo
 
 [Watch the demo video](assets/potentiometer_blink.mp4)
